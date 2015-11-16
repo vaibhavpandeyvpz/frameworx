@@ -1,2 +1,2 @@
-# frameworx
-Skeleton application based on Slim framework implementing user authentication, databases access via doctrine, command-line configuration and more
+# vaibhavpandeyvpz/frameworx
+Skeleton application on top of Slim framework implementing asset management via Gulp & Bower, Twig templates, response Bootstrap front-end, database access via Doctrine, command-line configuration and more

@@ -1,0 +1,16 @@
+<VirtualHost *:80>
+    ServerName ${FMX_HOST}
+    ServerAlias www.${FMX_HOST}
+
+    ServerAdmin admin@${FMX_HOST}
+
+    DocumentRoot "${FMX_WWW}"
+    <Directory "${FMX_WWW}">
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+
+    ErrorLog "${FMX_WWW}/error.txt"
+    CustomLog "${FMX_WWW}/access.txt" combined
+</VirtualHost>
