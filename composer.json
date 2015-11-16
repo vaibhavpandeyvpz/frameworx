@@ -1,0 +1,8 @@
+{
+    "require": {
+        "doctrine/dbal": "^2.5",
+        "slim/slim": "^2.6",
+        "symfony/console": "^2.7",
+        "twig/twig": "^1.23"
+    }
+}
