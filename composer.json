@@ -1,8 +1,45 @@
 {
+    "authors": [
+        {
+            "email": "contact@vaibhavpandey.com",
+            "homepage": "http://www.vaibhavpandey.com/",
+            "name": "Vaibhav Pandey",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "classes/"
+        }
+    },
+    "description": "Skeleton application on top of Slim framework implementing asset management via Gulp & Bower, authentication, database access via Doctrine, command-line configuration and more",
+    "homepage": "http://github.vaibhavpandey.com/frameworx",
+    "keywords": [
+        "authentication",
+        "framework",
+        "skeleton",
+        "slim"
+    ],
+    "license": "GPL-2.0",
+    "name": "vaibhavpandeyvpz/frameworx",
+    "post-create-project-cmd": [
+        "npm i",
+        "bower i",
+        "gulp build",
+        "php frameworx --generate=vhosts.conf"
+    ],
     "require": {
         "doctrine/dbal": "^2.5",
         "slim/slim": "^2.6",
+        "symfony/config": "^2.7",
         "symfony/console": "^2.7",
+        "symfony/translation": "^2.7",
+        "symfony/validator": "^2.7",
         "twig/twig": "^1.23"
-    }
+    },
+    "support": {
+        "docs": "http://github.vaibhavpandey.com/frameworx/documentation"
+    },
+    "type": "project",
+    "version": "1.0.0"
 }
