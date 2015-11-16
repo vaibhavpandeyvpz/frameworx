@@ -40,7 +40,7 @@
         "twig/twig": "^1.23"
     },
     "support": {
-        "docs": "http://github.vaibhavpandey.com/frameworx/documentation"
+        "docs": "https://github.com/vaibhavpandeyvpz/frameworx/wiki"
     },
     "type": "project",
     "version": "1.0.0"
