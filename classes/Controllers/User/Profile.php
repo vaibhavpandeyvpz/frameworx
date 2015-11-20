@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Controllers\Users;
+namespace App\Controllers\User;
 
 use App\Controllers\Controller;
 
-class Logout extends Controller
+class Profile extends Controller
 {
     public function index()
     {

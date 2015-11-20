@@ -36,11 +36,11 @@ class Logger
      */
     public function __construct($file, array $options = array())
     {
-        $this->options = array_merge_recursive(array(
+        $this->options = array_merge(array(
             'handlers' => array(new RotatingFileHandler($file, 7)),
             'name' => 'Frameworx',
             'processors' => array()
-        ));
+        ), $options);
     }
 
     public function write($object, $level)

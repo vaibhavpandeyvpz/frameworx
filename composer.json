@@ -17,6 +17,7 @@
     "keywords": [
         "authentication",
         "framework",
+        "multilingual",
         "skeleton",
         "slim"
     ],
@@ -26,11 +27,13 @@
         "npm i",
         "bower i",
         "gulp build",
-        "php frameworx --generate=config.php",
-        "php frameworx --generate=vhosts.conf"
+        "php app --generate=config.php",
+        "php app --generate=vhosts.conf"
     ],
     "require": {
         "doctrine/dbal": "^2.5",
+        "ircmaxell/password-compat": "^1.0",
+        "mailgun/mailgun-php": "^1.8",
         "monolog/monolog": "^1.17",
         "slim/slim": "^2.6",
         "symfony/console": "^2.7",

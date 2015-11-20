@@ -1,0 +1,49 @@
+<?php
+
+return array(
+    /**
+     * Cookies
+     */
+    'cookies.encrypt' => true,
+    'cookies.lifetime' => '+7 days',
+    'cookies.secret_key' => '${COOKIES_KEY}',
+    /**
+     * Database
+     */
+    'db.charset' => 'utf8',
+    'db.driver' => 'pdo_${DATABASE_DRIVER}',
+    'db.host' => 'localhost',
+    'db.name' => '${DATABASE_NAME}',
+    'db.password' => '${DATABASE_PASS}',
+    'db.port' => intval('${DATABASE_PORT}'),
+    'db.user' => '${DATABASE_USER}',
+    /**
+     * Debugging
+     */
+    'debug' => true,
+    /**
+     * Logging
+     */
+    'log.writer' => new App\Services\Logger(__DIR__ . '/storage/logs/app.log'),
+    /**
+     * Mailgun
+     */
+    'mailgun.domain'=> '${MAILGUN_DOMAIN}',
+    'mailgun.key'=> '${MAILGUN_KEY}',
+    /**
+     * Security
+     */
+    'security.field.pk' => 'id',
+    'security.field.username' => 'email',
+    'security.field.password' => 'password',
+    'security.session' => '${SESSION_USER}',
+    'security.table' => 'users',
+    /**
+     * Session
+     */
+    'session.cookie'=> '${SESSION_COOKIE}',
+    /**
+     * Templates
+     */
+    'templates.path' => __DIR__ . '/assets/twig',
+);

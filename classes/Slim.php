@@ -4,6 +4,16 @@ namespace App;
 
 use Slim\Slim as BaseSlim;
 
+/**
+ * Class Slim
+ * @package App
+ *
+ * @property-read \Doctrine\DBAL\Connection $db
+ * @property-read \Mailgun\Mailgun $mailgun
+ * @property-read \App\Services\Password $password
+ * @property-read \Doctrine\DBAL\Query\QueryBuilder $qb
+ * @property-read \App\Services\Security $security
+ */
 class Slim extends BaseSlim
 {
     /**

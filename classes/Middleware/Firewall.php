@@ -26,7 +26,7 @@ class Firewall extends Middleware
 
     public function match()
     {
-        if (preg_match("@^{$this->pattern}?.+$@", $this->app->request->getPathInfo())) {
+        if (preg_match("@{$this->pattern}?.+$@", $this->app->request->getPathInfo())) {
             $this->callback->call($this->app);
         }
     }
