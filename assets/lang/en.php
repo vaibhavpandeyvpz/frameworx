@@ -14,6 +14,10 @@ return array(
             'label' => 'Password',
             'placeholder' => 'secret'
         ),
+        'search' => array(
+            'title' => 'Press enter to perform Search',
+            'placeholder' => 'enter some text...'
+        ),
     ),
     'flash' => array(
         'login' => array(
@@ -30,12 +34,20 @@ return array(
     'img' => array(
         'logo' => 'Logo'
     ),
-    'titles' => array(
+    'nav' => array(
+        'dashboard' => 'Dashboard',
+        'hi' => 'Hi!',
         'home' => 'Home',
+        'login' => 'Login',
+        'logout' => 'Logout',
+        'profile' => 'Profile',
+    ),
+    'titles' => array(
+        'home' => 'Homepage',
         'login' => 'Login Required',
         'user' => array(
-            'home' => 'User -> Home',
-            'profile' => 'User -> Profile',
+            'dashboard' => 'Activity Dashboard',
+            'profile' => 'My Profile',
         ),
     ),
 );

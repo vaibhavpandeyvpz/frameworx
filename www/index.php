@@ -58,9 +58,7 @@ $app->add(new Bootstrap());
 
 $app->add(new Firewall('^/user', function ()
 {
-    if ($this->security->check()) {
-        $this->view()->set('user', $this->security->user());
-    } else {
+    if (!$this->security->check()) {
         $this->flash('flash.login.required', 'warning');
         $this->redirectTo('login');
     }
@@ -70,7 +68,7 @@ $app->add(new Firewall('^/login', function ()
 {
     if ($this->security->check()) {
         $this->flash('flash.login.already', 'info');
-        $this->redirectTo('user_home');
+        $this->redirectTo('home');
     }
 }));
 
@@ -90,8 +88,8 @@ $app->post('/login', 'Login@check')
 
 $app->group('/user', function () use ($app)
 {
-    $app->get('/', 'User\\Home@index')
-        ->setName('user_home');
+    $app->get('/', 'User\\Dashboard@index')
+        ->setName('user_dashboard');
 
     $app->get('/logout', 'User\\Logout@index')
         ->setName('user_logout');

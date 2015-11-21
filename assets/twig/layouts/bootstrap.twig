@@ -13,7 +13,11 @@
     <![endif]-->
 </head>
 <body>
-{% block body %}{% endblock %}
+{% block body %}
+    <div class="container">
+        {% block container %}{% endblock %}
+    </div>
+{% endblock %}
 <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

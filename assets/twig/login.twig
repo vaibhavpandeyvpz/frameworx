@@ -1,26 +1,24 @@
 {% extends 'layouts/bootstrap.twig' %}
 
-{% block body %}
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4">
-                <form class="form-login" method="post" action="{{ route('login_check') }}">
-                    <img class="img-responsive" src="{{ asset('images/logo.png') }}" alt="{{ 'img.logo'|trans }}">
-                    <hr>
-                    {% include 'partials/flash.twig' %}
-                    <div class="form-group">
-                        <label class="control-label">{{ 'fields.email.label'|trans }}</label>
-                        <input class="form-control" type="text" maxlength="32" name="email" placeholder="{{ 'fields.email.placeholder'|trans }}" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label">{{ 'fields.password.label'|trans }}</label>
-                        <input class="form-control" type="password" maxlength="32" name="password" placeholder="{{ 'fields.password.placeholder'|trans }}" required>
-                    </div>
-                    <div class="text-right">
-                        <button class="btn btn-primary" type="submit">{{ 'buttons.login'|trans }}</button>
-                    </div>
-                </form>
-            </div>
+{% block container %}
+    <div class="row">
+        <div class="col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4">
+            <form class="form-login" method="post" action="{{ route('login_check') }}">
+                <img class="img-responsive" src="{{ asset('images/logo.png') }}" alt="{{ 'img.logo'|trans }}">
+                <hr>
+                {% include 'partials/flash.twig' %}
+                <div class="form-group">
+                    <label class="control-label">{{ 'fields.email.label'|trans }}</label>
+                    <input class="form-control" type="text" maxlength="32" name="email" placeholder="{{ 'fields.email.placeholder'|trans }}" required>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">{{ 'fields.password.label'|trans }}</label>
+                    <input class="form-control" type="password" maxlength="32" name="password" placeholder="{{ 'fields.password.placeholder'|trans }}" required>
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-primary" type="submit">{{ 'buttons.login'|trans }}</button>
+                </div>
+            </form>
         </div>
     </div>
 {% endblock %}
