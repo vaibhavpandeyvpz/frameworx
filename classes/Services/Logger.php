@@ -18,7 +18,7 @@ class Logger
      */
     private $options;
 
-    protected static $levels = [
+    protected static $levels = array(
         Log::ALERT => Monolog::ALERT,
         Log::CRITICAL => Monolog::CRITICAL,
         Log::DEBUG => Monolog::DEBUG,
@@ -27,7 +27,7 @@ class Logger
         Log::INFO => Monolog::INFO,
         Log::NOTICE => Monolog::NOTICE,
         Log::WARN => Monolog::WARNING,
-    ];
+    );
 
     /**
      * Logger constructor.

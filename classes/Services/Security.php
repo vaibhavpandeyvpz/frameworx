@@ -48,6 +48,11 @@ class Security
         return $this->user && is_array($this->user);
     }
 
+    public function hash($password)
+    {
+        return password_hash($password, PASSWORD_DEFAULT);
+    }
+
     /**
      * @param string $username
      * @param string $password
@@ -63,7 +68,7 @@ class Security
         $result = $qb->execute();
         if ($result->rowCount() == 1) {
             $user = $result->fetch(\PDO::FETCH_ASSOC);
-            if ($this->app->password->check($password, $user[$this->app->config('security.field.password')])) {
+            if ($this->match($password, $user[$this->app->config('security.field.password')])) {
                 $_SESSION[$this->app->config('security.session')] = $user[$this->app->config('security.field.pk')];
                 $this->user = $user;
                 return true;
@@ -80,6 +85,11 @@ class Security
         $this->user = false;
     }
 
+    public function match($password, $hash)
+    {
+        return password_verify($password, $hash);
+    }
+
     /**
      * @param $password
      * @return bool
@@ -90,7 +100,7 @@ class Security
         $qb->update($this->app->config('security.table'))
             ->set($this->app->config('security.field.password'), '?')
             ->where($qb->expr()->eq($this->app->config('security.field.pk'), '?'))
-            ->setParameter(0, $this->app->password->hash($password))
+            ->setParameter(0, $this->hash($password))
             ->setParameter(1, $this->user[$this->app->config('security.field.pk')]);
         return $qb->execute() == 1;
     }

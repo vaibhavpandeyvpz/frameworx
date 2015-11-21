@@ -16,6 +16,7 @@ class Firewall extends Middleware
 
     function __construct($pattern, \Closure $callback)
     {
+        $this->callback = $callback;
         $this->pattern = $pattern;
     }
 
@@ -27,7 +28,7 @@ class Firewall extends Middleware
     public function match()
     {
         if (preg_match("@{$this->pattern}?.+$@", $this->app->request->getPathInfo())) {
-            $this->callback->call($this->app);
+            call_user_func($this->callback->bindTo($this->app));
         }
     }
 }

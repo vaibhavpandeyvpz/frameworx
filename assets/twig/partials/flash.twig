@@ -1,0 +1,5 @@
+{% for message, level in flash %}
+    <div class="alert alert-{{ level }}">
+        {{ message|trans }}
+    </div>
+{% endfor %}

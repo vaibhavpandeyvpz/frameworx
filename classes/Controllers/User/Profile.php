@@ -8,5 +8,8 @@ class Profile extends Controller
 {
     public function index()
     {
+        $this->app->render('user/profile.twig', [
+            'title' => 'titles.user.profile'
+        ]);
     }
 }

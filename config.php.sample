@@ -6,21 +6,27 @@ return array(
      */
     'cookies.encrypt' => true,
     'cookies.lifetime' => '+7 days',
-    'cookies.secret_key' => '${COOKIES_KEY}',
+    'cookies.secret_key' => '!!something-random!!',
     /**
      * Database
      */
     'db.charset' => 'utf8',
-    'db.driver' => 'pdo_${DATABASE_DRIVER}',
+    'db.driver' => 'pdo_mysql',
     'db.host' => 'localhost',
-    'db.name' => '${DATABASE_NAME}',
-    'db.password' => '${DATABASE_PASS}',
-    'db.port' => intval('${DATABASE_PORT}'),
-    'db.user' => '${DATABASE_USER}',
+    'db.name' => 'frameworx',
+    'db.password' => null,
+    'db.port' => 3306,
+    'db.user' => 'root',
     /**
      * Debugging
      */
     'debug' => true,
+    /**
+     * Localization
+     */
+    'locale.all' => array('en'),
+    'locale.default' => 'en',
+    'locale.path' => __DIR__ . '/assets/lang/%s.php',
     /**
      * Logging
      */
@@ -28,22 +34,27 @@ return array(
     /**
      * Mailgun
      */
-    'mailgun.domain'=> '${MAILGUN_DOMAIN}',
-    'mailgun.key'=> '${MAILGUN_KEY}',
+    'mailgun.domain'=> null,
+    'mailgun.key'=> null,
     /**
      * Security
      */
     'security.field.pk' => 'id',
     'security.field.username' => 'email',
     'security.field.password' => 'password',
-    'security.session' => '${SESSION_USER}',
+    'security.session' => '!!something-random!!',
     'security.table' => 'users',
     /**
      * Session
      */
-    'session.cookie'=> '${SESSION_COOKIE}',
+    'session.cookie'=> '!!something-random!!',
     /**
      * Templates
      */
-    'templates.path' => __DIR__ . '/assets/twig',
+    'view' => 'App\\Services\\Twig',
+    'view.options' => array(
+        'cache' => __DIR__ . '/storage/twig',
+        'debug' => true,
+    ),
+    'view.path' => __DIR__ . '/assets/twig',
 );

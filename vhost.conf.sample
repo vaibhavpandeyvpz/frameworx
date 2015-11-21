@@ -1,16 +1,16 @@
 <VirtualHost *:80>
-    ServerName ${FMX_HOST}
-    ServerAlias www.${FMX_HOST}
+    ServerName frameworx.dev
+    ServerAlias www.frameworx.dev
 
-    ServerAdmin admin@${FMX_HOST}
+    ServerAdmin admin@frameworx.dev
 
-    DocumentRoot "${FMX_WWW}"
-    <Directory "${FMX_WWW}">
+    DocumentRoot "${FMX_PATH}/www"
+    <Directory "${FMX_PATH}/www">
         AllowOverride All
         Order allow,deny
         Allow from all
     </Directory>
 
-    ErrorLog "${FMX_WWW}/error.txt"
-    CustomLog "${FMX_WWW}/access.txt" combined
+    ErrorLog "${FMX_PATH}/www/error.txt"
+    CustomLog "${FMX_PATH}/www/access.txt" combined
 </VirtualHost>

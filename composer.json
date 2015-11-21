@@ -12,7 +12,7 @@
             "App\\": "classes/"
         }
     },
-    "description": "Skeleton application on top of Slim framework implementing asset management via Gulp & Bower, Twig templates, response Bootstrap front-end, database access via Doctrine, command-line configuration and more",
+    "description": "Skeleton application on top of Slim framework implementing asset management via Gulp & Bower, Twig templates, response Bootstrap front-end, database access via Doctrine, Symfony translations and more",
     "homepage": "http://github.vaibhavpandey.com/frameworx",
     "keywords": [
         "authentication",
@@ -23,20 +23,19 @@
     ],
     "license": "GPL-2.0",
     "name": "vaibhavpandeyvpz/frameworx",
-    "post-create-project-cmd": [
-        "npm i",
-        "bower i",
-        "gulp build",
-        "php app --generate=config.php",
-        "php app --generate=vhosts.conf"
-    ],
+    "scripts" : {
+        "post-create-project-cmd": [
+            "npm i",
+            "bower i",
+            "gulp"
+        ]
+    },
     "require": {
         "doctrine/dbal": "^2.5",
         "ircmaxell/password-compat": "^1.0",
         "mailgun/mailgun-php": "^1.8",
         "monolog/monolog": "^1.17",
         "slim/slim": "^2.6",
-        "symfony/console": "^2.7",
         "symfony/translation": "^2.7",
         "symfony/validator": "^2.7",
         "twig/twig": "^1.23"

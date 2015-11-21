@@ -10,9 +10,10 @@ use Slim\Slim as BaseSlim;
  *
  * @property-read \Doctrine\DBAL\Connection $db
  * @property-read \Mailgun\Mailgun $mailgun
- * @property-read \App\Services\Password $password
  * @property-read \Doctrine\DBAL\Query\QueryBuilder $qb
  * @property-read \App\Services\Security $security
+ * @property-read \Symfony\Component\Translation\Translator $translator
+ * @property-read \Symfony\Component\Validator\Validator\ValidatorInterface $validator
  */
 class Slim extends BaseSlim
 {
