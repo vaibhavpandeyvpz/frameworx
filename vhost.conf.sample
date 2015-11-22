@@ -4,13 +4,13 @@
 
     ServerAdmin admin@frameworx.dev
 
-    DocumentRoot "${FMX_PATH}/www"
-    <Directory "${FMX_PATH}/www">
+    DocumentRoot "${APP_PATH}/www"
+    <Directory "${APP_PATH}/www">
         AllowOverride All
         Order allow,deny
         Allow from all
     </Directory>
 
-    ErrorLog "${FMX_PATH}/www/error.txt"
-    CustomLog "${FMX_PATH}/www/access.txt" combined
+    ErrorLog "${APP_PATH}/www/error.txt"
+    CustomLog "${APP_PATH}/www/access.txt" combined
 </VirtualHost>

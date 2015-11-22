@@ -43,6 +43,5 @@
     "support": {
         "docs": "https://github.com/vaibhavpandeyvpz/frameworx/wiki"
     },
-    "type": "project",
-    "version": "1.0.0-dev"
+    "type": "project"
 }
