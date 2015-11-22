@@ -45,7 +45,7 @@ class Security
      */
     public function check()
     {
-        return $this->user && is_array($this->user);
+        return ($this->user !== false) && ($this->user['id'] >= 1);
     }
 
     public function hash($password)

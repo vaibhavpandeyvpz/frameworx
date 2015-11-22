@@ -3,20 +3,20 @@
 return array(
     'app' => 'Frameworx',
     'buttons' => array(
-        'login' => 'Login'
+        'login' => 'Login',
     ),
     'fields' => array(
         'email' => array(
             'label' => 'Email',
-            'placeholder' => 'address@domain.tld'
+            'placeholder' => 'address@domain.tld',
         ),
         'password' => array(
             'label' => 'Password',
-            'placeholder' => 'secret'
+            'placeholder' => 'secret',
         ),
         'search' => array(
+            'placeholder' => 'enter some text...',
             'title' => 'Press enter to perform Search',
-            'placeholder' => 'enter some text...'
         ),
     ),
     'flash' => array(
@@ -43,11 +43,11 @@ return array(
         'profile' => 'Profile',
     ),
     'titles' => array(
-        'home' => 'Homepage',
-        'login' => 'Login Required',
+        'home' => 'Home',
+        'login' => 'Login',
         'user' => array(
-            'dashboard' => 'Activity Dashboard',
-            'profile' => 'My Profile',
+            'dashboard' => 'Dashboard',
+            'profile' => 'Profile',
         ),
     ),
 );

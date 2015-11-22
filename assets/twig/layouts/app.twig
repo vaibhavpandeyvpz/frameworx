@@ -9,3 +9,7 @@
     {% include 'partials/flash.twig' %}
     {% block page %}{% endblock %}
 {% endblock %}
+
+{% block meta %}
+    <title>{{ title|trans }} - {{ 'app'|trans }}</title>
+{% endblock %}

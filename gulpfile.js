@@ -22,6 +22,8 @@ gulp.task('css', function () {
         .pipe(gulp.dest('./www/css'));
 });
 
+gulp.task('default', ['css', 'fonts', 'images', 'js']);
+
 gulp.task('fonts', function () {
     var src = [
         './vendor/bower/bootstrap/fonts/*.{eot,svg,ttf,woff,woff2}',
@@ -47,5 +49,3 @@ gulp.task('js', function () {
         .pipe(gulpConcat('app.js'))
         .pipe(gulp.dest('./www/js'));
 });
-
-gulp.task('default', ['css', 'fonts', 'js']);
