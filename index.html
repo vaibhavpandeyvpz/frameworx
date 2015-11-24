@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Frameworx by vaibhavpandeyvpz</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Frameworx</h1>
+        <p>Skeleton application on top of Slim framework implementing asset management via Gulp &amp; Bower, Twig templates, response Bootstrap front-end, database access via Doctrine, Symfony translations and more</p>
+        <p class="view"><a href="https://github.com/vaibhavpandeyvpz/frameworx">View the Project on GitHub <small>vaibhavpandeyvpz/frameworx</small></a></p>
+        <ul>
+          <li><a href="https://github.com/vaibhavpandeyvpz/frameworx/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/vaibhavpandeyvpz/frameworx/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/vaibhavpandeyvpz/frameworx">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="vaibhavpandeyvpzframeworx" class="anchor" href="#vaibhavpandeyvpzframeworx" aria-hidden="true"><span class="octicon octicon-link"></span></a>vaibhavpandeyvpz/frameworx</h1>
+
+<p>Skeleton application on top of <a href="https://github.com/slimphp/Slim">Slim</a> framework implementing asset management via <a href="https://github.com/gulpjs/gulp">Gulp</a> &amp; <a href="https://github.com/bower/bower">Bower</a>, <a href="https://github.com/twigphp/Twig">Twig</a> templates, response <a href="https://github.com/twbs/bootstrap">Bootstrap</a> front-end, database access via <a href="https://github.com/doctrine/dbal">Doctrine</a>, <a href="https://github.com/symfony/symfony">Symfony</a> translations and more.</p>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<ul>
+<li>Install <a href="https://nodejs.org/en/">Node.js</a> on your machine.</li>
+<li>Install <a href="http://bower.io/">Bower</a> and <a href="http://gulpjs.com/">Gulp</a> globally using below commands:</li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre>npm i -g bower gulp</pre></div>
+
+<ul>
+<li>Install <a href="https://getcomposer.org/">Composer</a> using below command:</li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre>curl -sS https://getcomposer.org/installer <span class="pl-k">|</span> php -- --install-dir=bin --filename=composer</pre></div>
+
+<ul>
+<li>Install <a href="https://github.com/vaibhavpandeyvpz/frameworx">Frameworx</a> via composer:</li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre>php bin/composer create-project vaibhavpandeyvpz/frameworx mysite <span class="pl-s"><span class="pl-pds">"</span>@dev<span class="pl-pds">"</span></span></pre></div>
+
+<ul>
+<li>Move <code>config.php.sample</code> to <code>config.php</code>, and change <strong>cookies.secret_key</strong>, <strong>security.session</strong>, <strong>session.cookie</strong> to some random values. Those can generated with <a href="www.vaibhavpandey.com/etoolkit/#/passwords-generator">this</a> tool for ease.</li>
+<li>If you use <a href="https://httpd.apache.org/">Apache HTTPd</a> server for development, you can optionally move <code>vhost.conf.sample</code> to <code>vhost.conf</code> and replace occurences of <strong>${APP_PATH}</strong> to absolute path of your local frameworx <code>www</code> folder. You then need to add this file to your server's <code>httpd.conf</code> to load.</li>
+<li>Do not forget to add your <strong>ServerName</strong> from <code>vhost.conf</code> to your <code>/etc/hosts</code> file for local domain name resolution.</li>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>See <a href="https://github.com/vaibhavpandeyvpz/frameworx/blob/2.x/LICENSE.md">LICENSE.md</a> file.</p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/vaibhavpandeyvpz">vaibhavpandeyvpz</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-67528024-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
