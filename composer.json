@@ -13,7 +13,7 @@
         }
     },
     "description": "Skeleton application on top of Slim framework implementing asset management via Gulp & Bower, Twig templates, response Bootstrap front-end, database access via Doctrine, Symfony translations and more",
-    "homepage": "http://github.vaibhavpandey.com/frameworx",
+    "homepage": "http://www.vaibhavpandey.com/frameworx",
     "keywords": [
         "authentication",
         "framework",
