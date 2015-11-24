@@ -16,7 +16,7 @@ curl -sS https://getcomposer.org/installer | php -- --install-dir=bin --filename
 ```bash
 php bin/composer create-project vaibhavpandeyvpz/frameworx mysite "@dev"
 ```
-- Move ```config.php.sample``` to ```config.php```, and change **cookies.secret_key**, **security.session**, **session.cookie** to some random values. Those can generated with [this](www.vaibhavpandey.com/etoolkit/#/passwords-generator) tool for ease.
+- Move ```config.php.sample``` to ```config.php```, and change **cookies.secret_key**, **security.session**, **session.cookie** to some random values. Those can generated with [this](http://git.io/vBY8h) tool for ease.
 - If you use [Apache HTTPd](https://httpd.apache.org/) server for development, you can optionally move ```vhost.conf.sample``` to ```vhost.conf``` and replace occurences of **${APP_PATH}** to absolute path of your local frameworx ```www``` folder. You then need to add this file to your server's ```httpd.conf``` to load.
 - Do not forget to add your **ServerName** from ```vhost.conf``` to your ```/etc/hosts``` file for local domain name resolution.
 
