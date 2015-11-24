@@ -22,3 +22,7 @@ php bin/composer create-project vaibhavpandeyvpz/frameworx app "@dev"
 ```conf
 Include "/home/<USER>/Sites/frameworx/vhost.conf"
 ```
+
+License
+------
+See [LICENSE.md](https://github.com/vaibhavpandeyvpz/frameworx/blob/2.x/LICENSE.md) file.
