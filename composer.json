@@ -40,8 +40,5 @@
         "symfony/validator": "^2.7",
         "twig/twig": "^1.23"
     },
-    "support": {
-        "docs": "https://github.com/vaibhavpandeyvpz/frameworx/wiki"
-    },
     "type": "project"
 }
