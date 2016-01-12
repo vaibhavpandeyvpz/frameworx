@@ -28,7 +28,8 @@
       "npm i",
       "bower i",
       "gulp build",
-      "php console configure"
+      "php console configure",
+      "php console import -Fschema.sql"
     ]
   },
   "require": {
