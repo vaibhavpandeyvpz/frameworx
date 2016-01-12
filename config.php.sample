@@ -6,17 +6,17 @@ return array(
      */
     'cookies.encrypt' => true,
     'cookies.lifetime' => '+7 days',
-    'cookies.secret_key' => '!!something-random!!',
+    'cookies.secret_key' => '#COOKIES_SECRET_KEY',
     /**
      * Database
      */
     'db.charset' => 'utf8',
     'db.driver' => 'pdo_mysql',
     'db.host' => 'localhost',
-    'db.name' => 'frameworx',
-    'db.password' => null,
+    'db.name' => '#DB_NAME',
+    'db.password' => '#DB_PASSWORD',
     'db.port' => 3306,
-    'db.user' => 'root',
+    'db.user' => '#DB_USER',
     /**
      * Debugging
      */
@@ -32,22 +32,17 @@ return array(
      */
     'log.writer' => new App\Services\Logger(__DIR__ . '/storage/logs/app.log'),
     /**
-     * Mailgun
-     */
-    'mailgun.domain'=> null,
-    'mailgun.key'=> null,
-    /**
      * Security
      */
     'security.field.pk' => 'id',
     'security.field.username' => 'email',
     'security.field.password' => 'password',
-    'security.session' => '!!something-random!!',
+    'security.session_name' => '#SECURITY_SESSION_NAME',
     'security.table' => 'users',
     /**
      * Session
      */
-    'session.cookie'=> '!!something-random!!',
+    'session.cookie_name'=> '#SESSION_COOKIE_NAME',
     /**
      * Templates
      */
@@ -56,5 +51,5 @@ return array(
         'cache' => __DIR__ . '/storage/twig',
         'debug' => true,
     ),
-    'view.path' => __DIR__ . '/assets/twig',
+    'view.path' => __DIR__ . '/assets/twig'
 );

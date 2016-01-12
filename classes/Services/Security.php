@@ -12,6 +12,11 @@ class Security
     private $app;
 
     /**
+     * @var string
+     */
+    private $session;
+
+    /**
      * @var array
      */
     private $user;
@@ -23,7 +28,8 @@ class Security
     function __construct(Slim $app)
     {
         $this->app = $app;
-        $id = isset($_SESSION[$app->config('security.session')]) ? (int) $_SESSION[$app->config('security.session')] : -1;
+        $this->session = $this->app->config('security.session_name');
+        $id = isset($_SESSION[$this->session]) ? (int) $_SESSION[$this->session] : -1;
         if ($id >= 1) {
             $qb = $this->app->qb;
             $qb->select('*')
@@ -69,7 +75,7 @@ class Security
         if ($result->rowCount() == 1) {
             $user = $result->fetch(\PDO::FETCH_ASSOC);
             if ($this->match($password, $user[$this->app->config('security.field.password')])) {
-                $_SESSION[$this->app->config('security.session')] = $user[$this->app->config('security.field.pk')];
+                $_SESSION[$this->session] = $user[$this->app->config('security.field.pk')];
                 $this->user = $user;
                 return true;
             }
@@ -79,8 +85,8 @@ class Security
 
     public function logout()
     {
-        if (isset($_SESSION[$this->app->config('security.session')])) {
-            unset($_SESSION[$this->app->config('security.session')]);
+        if (isset($_SESSION[$this->session])) {
+            unset($_SESSION[$this->session]);
         }
         $this->user = false;
     }
@@ -91,17 +97,19 @@ class Security
     }
 
     /**
-     * @param $password
+     * @param array $values
      * @return bool
      */
-    public function setPassword($password)
+    public function update(array $values)
     {
         $qb = $this->app->qb;
         $qb->update($this->app->config('security.table'))
-            ->set($this->app->config('security.field.password'), '?')
-            ->where($qb->expr()->eq($this->app->config('security.field.pk'), '?'))
-            ->setParameter(0, $this->hash($password))
-            ->setParameter(1, $this->user[$this->app->config('security.field.pk')]);
+            ->where($qb->expr()->eq($this->app->config('security.field.pk'), ':uid'))
+            ->setParameter('uid', $this->user[$this->app->config('security.field.pk')]);
+        foreach ($values as $k => $v) {
+            $qb->set($k, ":{$k}")
+                ->setParameter(":{$k}", $v);
+        }
         return $qb->execute() == 1;
     }
 

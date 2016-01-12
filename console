@@ -1,0 +1,43 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+$app = new Consoler\Application();
+
+$app->setContainer($container = new Katora\Container(['root' => __DIR__]));
+
+// <editor-fold desc="Services">
+
+$container->singleton('config', function ($root) {
+    if (file_exists($path = "{$root}/config.php")) {
+        return require $path;
+    }
+    throw new Exception("'config.php' file not exists. Run 'php console configure' to create one.");
+}, 'root');
+
+$container->singleton('db', function ($config) {
+    return Doctrine\DBAL\DriverManager::getConnection(array(
+        'charset' => $config['db.charset'],
+        'dbname' => $config['db.name'],
+        'driver' => $config['db.driver'],
+        'host' => $config['db.host'],
+        'password' => $config['db.password'],
+        'port' => $config['db.port'],
+        'user' => $config['db.user']
+    ));
+}, 'config');
+
+// </editor-fold>
+
+// <editor-fold desc="Commands">
+
+$app->add(new App\Commands\Configure());
+
+$app->add(new App\Commands\Import());
+
+$app->add(new App\Commands\Serve());
+
+// </editor-fold>
+
+$app->run();

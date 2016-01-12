@@ -15,6 +15,8 @@ use Symfony\Component\Validator\Validation;
 
 $app = new Slim(require(__DIR__ . '/../config.php'));
 
+// <editor-fold desc="Services">
+
 $app->container->singleton('db', function () use ($app)
 {
     return DBAL::getConnection(array(
@@ -26,11 +28,6 @@ $app->container->singleton('db', function () use ($app)
         'port' => $app->config('db.port'),
         'user' => $app->config('db.user'),
     ));
-});
-
-$app->container->singleton('mailgun', function () use ($app)
-{
-    return new Mailgun($app->config('mailgun.key'));
 });
 
 $app->container->set('qb', function () use ($app)
@@ -54,6 +51,16 @@ $app->container->singleton('translator', function () use ($app)
     return $translator;
 });
 
+$app->container->set('validator', function ()
+{
+    return Validation::createValidatorBuilder()
+        ->getValidator();
+});
+
+// </editor-fold>
+
+// <editor-fold desc="Middleware">
+
 $app->add(new Bootstrap());
 
 $app->add(new Firewall('^/user', function ()
@@ -74,8 +81,12 @@ $app->add(new Firewall('^/login', function ()
 
 $app->add(new SessionCookie(array(
     'expires' => $app->config('cookies.lifetime'),
-    'name' => $app->config('session.cookie')
+    'name' => $app->config('session.cookie_name')
 )));
+
+// </editor-fold>
+
+// <editor-fold desc="Routes">
 
 $app->any('/', 'Home@index')
     ->setName('home');
@@ -98,10 +109,6 @@ $app->group('/user', function () use ($app)
         ->setName('user_profile');
 });
 
-$app->container->set('validator', function ()
-{
-    return Validation::createValidatorBuilder()
-        ->getValidator();
-});
+// </editor-fold>
 
 $app->run();

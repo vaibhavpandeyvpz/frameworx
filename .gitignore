@@ -1,12 +1,13 @@
+.idea/
 node_modules/
 storage/*
 vendor/
 www/*
-.idea/
 
 composer.lock
 config.php
 vhost.conf
+*~
 
 !www/index.php
 !www/.htaccess

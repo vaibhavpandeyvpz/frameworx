@@ -1,44 +1,49 @@
 {
-    "authors": [
-        {
-            "email": "contact@vaibhavpandey.com",
-            "homepage": "http://www.vaibhavpandey.com/",
-            "name": "Vaibhav Pandey",
-            "role": "Developer"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "App\\": "classes/"
-        }
-    },
-    "description": "Skeleton application on top of Slim framework implementing asset management via Gulp & Bower, Twig templates, response Bootstrap front-end, database access via Doctrine, Symfony translations and more",
-    "homepage": "http://www.vaibhavpandey.com/frameworx",
-    "keywords": [
-        "authentication",
-        "framework",
-        "multilingual",
-        "skeleton",
-        "slim"
-    ],
-    "license": "GPL-2.0",
-    "name": "vaibhavpandeyvpz/frameworx",
-    "scripts" : {
-        "post-create-project-cmd": [
-            "npm i",
-            "bower i",
-            "gulp"
-        ]
-    },
-    "require": {
-        "doctrine/dbal": "^2.5",
-        "ircmaxell/password-compat": "^1.0",
-        "mailgun/mailgun-php": "^1.8",
-        "monolog/monolog": "^1.17",
-        "slim/slim": "^2.6",
-        "symfony/translation": "^2.7",
-        "symfony/validator": "^2.7",
-        "twig/twig": "^1.23"
-    },
-    "type": "project"
+  "authors": [
+    {
+      "email": "contact@vaibhavpandey.com",
+      "homepage": "http://www.vaibhavpandey.com/",
+      "name": "Vaibhav Pandey",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "classes/"
+    }
+  },
+  "description": "Skeleton application on top of Slim framework implementing asset management via Gulp & Bower, Twig templates, response Bootstrap front-end, database access via Doctrine, Symfony translations and more",
+  "homepage": "http://vaibhavpandeyvpz.github.io/frameworx",
+  "keywords": [
+    "authentication",
+    "framework",
+    "multilingual",
+    "skeleton",
+    "slim"
+  ],
+  "license": "GPL-2.0",
+  "name": "vaibhavpandeyvpz/frameworx",
+  "scripts" : {
+    "post-create-project-cmd": [
+      "npm i",
+      "bower i",
+      "gulp build",
+      "php console configure"
+    ]
+  },
+  "require": {
+    "php": ">=5.4",
+    "doctrine/dbal": "^2.5",
+    "monolog/monolog": "^1.17",
+    "slim/slim": "^2.6",
+    "symfony/translation": "^2.7",
+    "symfony/validator": "^2.7",
+    "twig/twig": "^1.23",
+    "vaibhavpandeyvpz/consoler": "^1.0",
+    "vaibhavpandeyvpz/katora": "^1.0"
+  },
+  "suggest": {
+    "ircmaxell/password-compat": "If running on PHP < 5.5.0, please install this to make use of hashing functions"
+  },
+  "type": "project"
 }
