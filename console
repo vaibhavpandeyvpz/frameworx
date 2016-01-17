@@ -9,15 +9,19 @@ $app->setContainer($container = new Katora\Container(['root' => __DIR__]));
 
 // <editor-fold desc="Services">
 
-$container->singleton('config', function ($root) {
+$container->singleton('config', function () {
+    /** @var Katora\Container $this */
+    $root = $this->get('root');
     if (file_exists($path = "{$root}/config.php")) {
         return require $path;
     }
     throw new Exception("'config.php' file not exists. Run 'php console configure' to create one.");
-}, 'root');
+});
 
 $container->singleton('db', function ($config) {
-    return Doctrine\DBAL\DriverManager::getConnection(array(
+    /** @var Katora\Container $this */
+    $config = $this->get('config');
+    return Doctrine\DBAL\DriverManager::getConnection([
         'charset' => $config['db.charset'],
         'dbname' => $config['db.name'],
         'driver' => $config['db.driver'],
@@ -25,8 +29,8 @@ $container->singleton('db', function ($config) {
         'password' => $config['db.password'],
         'port' => $config['db.port'],
         'user' => $config['db.user']
-    ));
-}, 'config');
+    ]);
+});
 
 // </editor-fold>
 
