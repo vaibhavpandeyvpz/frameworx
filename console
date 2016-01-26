@@ -5,7 +5,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $app = new Consoler\Application();
 
-$app->setContainer($container = new Katora\Container(['root' => __DIR__]));
+$app->setContainer($container = new Vaibhav\Katora\Container(['root' => __DIR__]));
 
 // <editor-fold desc="Services">
 
